@@ -9,6 +9,17 @@ $$\ reward=max(sellprice-buyprice,0)$$
 (Once again only positive values are only considered in a reward)
 ## Deep Q Learing in trading
 We are using Deep Q learning algorithm to create the RL agent and then train it. The basic objective of a Q-learning/Deep Q-learning  is to maximize the returns $\ G_t$ i.e the net reward inn a long run. In Q_learning we calculate Q_value which is the expected Return at a given state for a given action,
-$$\ Q(s,a) = E[G_t|S_t=s,A_t=a] $$ 
+$$\ Q(s,a) = E[G_t|S_t=s,A_t=a] $$ <br>
 This Q_value determines what action should be taken based on the maximum value of Q.<br>
 In deep Q Learning, deep neural network is used to approximate the values of Q
+![photo_2023-07-20_13-17-13](https://github.com/rakshith-2100/Deep-Q-Learning-Trading-Agent/assets/99346822/d609477e-a4a5-4192-8dc3-fc07cac04307)
+This image explains the working of the neural network and also tells us about the q_value that we get as an output.
+The Q_value from the neural network is then compared with the Q value from the **Bellman equation**<br>
+$$\ Q(s,a)=R_t(s,a)+γmax_a'(Q'(s',a')) \$$ <br>
+The Bellman equation <br>
+In the equation $\ s$ is the current state and $\ a\$ is the action taken and $\ s'$ is the next state and $\ R(s,a)$ is the reward that we get after doing action a and $\ γ$ here is the discount factor which is a hyperparameter that tells how valuable is a reward which we get in a future state and $\ a'$ is the set of actions possible in the next state $\max_a'(Q'(s',a'))$ and  determines the maximum Q_value possible for the next state which is also calculated from the neural network.<br>
+The Q_value that we get from the bellmen equation would serve as the target Q_value, so we call it as **Q_target** i.e $\ Q'(s,a)$  so the loss computed would me the mean square difference between q_value and q_target 
+$$\ L(θ)=1/N\sum_{i∈N}(Q_θ(S_i,A_i)-Q'_θ(S_i,A_i))^2\$$ <br>
+This loss would be used to fine tune the model i.e update weights $\ θ$ using Stocastic Gradient Descent optimizer(SGD)
+$$\ θ <- θ-α\frac{∂L}{∂θ}$$
+### Training a Deep Q model
