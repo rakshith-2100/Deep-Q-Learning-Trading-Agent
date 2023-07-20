@@ -29,7 +29,7 @@ This is used to maintain a balance in **exploration** and **exploitation**. Expl
 *( This can be seen in a function called trade from the class called ModelandTrade in the code )*
 #### Replay Memory
 Before we know about replay memory we should know about **experience**( $\ e_t$). The agents experience is defined as a tuple
-$$\ e_t=(s_t,a_t,r_{t+1},s_{t+1}$$
+$$\ e_t=(s_t,a_t,r_{t+1},s_{t+1})$$
 $\ s_t$ is the state at time t $\ a_t$ is the action taken on state $\ s_t$ and $\ r_{t+1}$ is the reward after taking action $\ a_t$ on state $\ s_t$ and $\ s_{t+1}$ is the next state.<br>
 We get experiences at each time step from random exploration and exploitation using epsilon greedy strategy and all the agents experience in each timestep is stored in the replay memory.*( in the code it is called as memory )*.
 #### Training 
