@@ -12,7 +12,7 @@ We are using Deep Q learning algorithm to create the RL agent and then train it.
 $$\ Q(s,a) = E[G_t|S_t=s,A_t=a] $$ <br>
 This Q_value determines what action should be taken based on the maximum value of Q.<br>
 In deep Q Learning, deep neural network is used to approximate the values of Q
-![photo_2023-07-20_13-17-13](https://github.com/rakshith-2100/Deep-Q-Learning-Trading-Agent/assets/99346822/d609477e-a4a5-4192-8dc3-fc07cac04307)
+![photo_2023-07-20_13-17-13](https://github.com/rakshith-2100/Deep-Q-Learning-Trading-Agent/assets/99346822/d609477e-a4a5-4192-8dc3-fc07cac04307) <br>
 This image explains the working of the neural network and also tells us about the q_value that we get as an output.
 The Q_value from the neural network is then compared with the Q value from the **Bellman equation**<br>
 $$\ Q(s,a)=R_t(s,a)+γmax_a'(Q'(s',a')) \$$ <br>
