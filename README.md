@@ -18,8 +18,12 @@ The Q_value from the neural network is then compared with the Q value from the *
 $$\ Q(s,a)=R_t(s,a)+γmax_a'(Q'(s',a')) \$$ <br>
 The Bellman equation <br>
 In the equation $\ s$ is the current state and $\ a\$ is the action taken and $\ s'$ is the next state and $\ R(s,a)$ is the reward that we get after doing action a and $\ γ$ here is the discount factor which is a hyperparameter that tells how valuable is a reward which we get in a future state and $\ a'$ is the set of actions possible in the next state $\max_a'(Q'(s',a'))$ and  determines the maximum Q_value possible for the next state which is also calculated from the neural network.<br>
-The Q_value that we get from the bellmen equation would serve as the target Q_value, so we call it as **Q_target** i.e $\ Q'(s,a)$  so the loss computed would me the mean square difference between q_value and q_target 
+The Q_value that we get from the bellmen equation would serve as the target Q_value, so we call it as **Q_target** i.e $\ Q'(s,a)$  so the loss computed would be the mean square difference between q_value and q_target 
 $$\ L(θ)=1/N\sum_{i∈N}(Q_θ(S_i,A_i)-Q'_θ(S_i,A_i))^2\$$ <br>
 This loss would be used to fine tune the model i.e update weights $\ θ$ using Stocastic Gradient Descent optimizer(SGD)
 $$\ θ <- θ-α\frac{∂L}{∂θ}$$
 ### Training a Deep Q model
+Before training we look into the training of the model we have to know two concepts that play a major role in trainng, **epsilon greddy strategy** and **replay memory** .
+#### Epsilon Greedy Strategy
+This is used to maintain a balance in exploration and exploitation as there are chances
+#### Replay Memory
