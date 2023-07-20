@@ -10,5 +10,5 @@ $$\ reward=max(sellprice-buyprice,0)$$
 ## Deep Q Learing in trading
 We are using Deep Q learning algorithm to create the RL agent and then train it. The basic objective of a Q-learning/Deep Q-learning  is to maximize the returns $\ G_t$ i.e the net reward in a long run in Q_learning we calculate something called Q_value which is the expected Return at a given state for a given action 
 $$\ Q(s,a) = E[G_t|S_t=s,A_t=a] $$ 
-This Q_value determines what action should be taken based on the maximum value of Q.
+This Q_value determines what action should be taken based on the maximum value of Q.<br>
 In deep Q Learning, deep neural network is used to approximate the values of Q
